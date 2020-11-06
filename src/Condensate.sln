@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Condensate.Mvc", "Condensat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condensate.Domain", "Condensate.Domain\Condensate.Domain.csproj", "{F7470EFD-9C75-401C-9B65-2B736C8D9D42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condensate.Infra.Data", "Condensate.Infra.Data\Condensate.Infra.Data.csproj", "{5BF036F4-2377-4D3C-B8DF-9AB3C10A94A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{F7470EFD-9C75-401C-9B65-2B736C8D9D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7470EFD-9C75-401C-9B65-2B736C8D9D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7470EFD-9C75-401C-9B65-2B736C8D9D42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF036F4-2377-4D3C-B8DF-9AB3C10A94A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF036F4-2377-4D3C-B8DF-9AB3C10A94A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF036F4-2377-4D3C-B8DF-9AB3C10A94A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF036F4-2377-4D3C-B8DF-9AB3C10A94A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B9BAA6DF-7AD4-4F25-BA15-618550882792} = {6B22CA7C-CBDD-432F-AA32-82EEFB29BCA4}
 		{F7470EFD-9C75-401C-9B65-2B736C8D9D42} = {0EFA08FB-5E83-43BE-87DE-A9187B26BE15}
+		{5BF036F4-2377-4D3C-B8DF-9AB3C10A94A6} = {7CE2C1D2-5D98-4AE3-9532-EC9CD4637994}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B0E2B96C-D739-4796-A850-C1194C8EEFC7}
