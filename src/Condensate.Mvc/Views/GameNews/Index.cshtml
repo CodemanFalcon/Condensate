@@ -1,0 +1,12 @@
+﻿@model Condensate.SteamApi.SteamApiClient.GameNewsResponse
+
+@foreach (var gameNewsItem in Model.appnews.newsitems)
+{
+    <div>
+        <h3>@gameNewsItem.title</h3>
+        <br />
+        @Html.Raw(gameNewsItem.contents)
+        <hr style="color:#919090; background-color:#919090; height:1px; border:none;" />
+        <br />
+    </div>
+}
