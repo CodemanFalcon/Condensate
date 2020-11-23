@@ -13,5 +13,12 @@ namespace Condensate.SteamApi.UnitTests
             var news = result.appnews.newsitems;
 
         }
+
+        [Fact]
+        public void Test2()
+        {
+            var sut = new SteamApiClient();
+            sut.GetCommunityProfileGames("codemanfalcon");
+        }
     }
 }

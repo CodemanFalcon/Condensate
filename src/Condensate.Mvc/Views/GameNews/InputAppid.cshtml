@@ -1,0 +1,21 @@
+﻿@model Condensate.SteamApi.ResponseModels.GameNewsResponse
+
+@using (Html.BeginForm("InputAppid", "GameNews", FormMethod.Get))
+{
+    <input type="number" name="appid" id="appid" />
+
+    <input type="submit" value="InputAppid" />
+}
+
+<h1>@Model.appnews.appid</h1>
+
+@foreach (var gameNewsItem in Model.appnews.newsitems)
+{
+    <div>
+        <h3>@gameNewsItem.title</h3>
+        <br />
+        @Html.Raw(gameNewsItem.contents)
+        <hr style="color:#919090; background-color:#919090; height:1px; border:none;" />
+        <br />
+    </div>
+}

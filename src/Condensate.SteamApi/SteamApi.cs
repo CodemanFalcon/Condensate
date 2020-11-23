@@ -1,8 +1,13 @@
-﻿using System;
+﻿using Condensate.SteamApi.ResponseModels;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Condensate.SteamApi
 {
@@ -12,6 +17,22 @@ namespace Condensate.SteamApi
         public SteamApiClient()
         {
 
+        }
+
+        public CommunityProfileGamesResponse GetCommunityProfileGames(string communityid)
+        {
+            var url = $"https://steamcommunity.com/id/{communityid}/games/?xml=1";
+            XmlSerializer ser = new XmlSerializer(typeof(CommunityProfileGamesResponse));
+
+            WebClient client = new WebClient();
+
+            string data = Encoding.Default.GetString(client.DownloadData(url));
+
+            Stream stream = new MemoryStream(Encoding.UTF8.GetBytes(data));
+
+            CommunityProfileGamesResponse reply = (CommunityProfileGamesResponse)ser.Deserialize(stream);
+
+            return reply;
         }
 
         public GameNewsResponse GetGameNews(int appid)
@@ -25,31 +46,6 @@ namespace Condensate.SteamApi
                 var gameNewsResponse = JsonSerializer.Deserialize<GameNewsResponse>(json);
                 return gameNewsResponse;
             }
-        }
-
-        public class GameNewsResponse {
-            public GameNews appnews { get; set; }
-        }
-
-        public class GameNews
-        {
-            public int appid { get; set; }
-            public List<GameNewsItem> newsitems { get; set; }
-        }
-
-        public class GameNewsItem{
-            public string gid { get; set; }
-            public string title { get; set; }
-            public string url { get; set; }
-            public bool is_external_url { get; set; }
-            public string author { get; set; }
-            public string contents { get; set; }
-            public string feedlabel { get; set; }
-            public int date { get; set; }
-            public string feedname { get; set; }
-            public int feed_type { get; set; }
-            public int appid { get; set; }
-           
         }
     }
 }

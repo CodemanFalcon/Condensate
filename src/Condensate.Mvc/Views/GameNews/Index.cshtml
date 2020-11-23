@@ -1,12 +1,8 @@
-﻿@model Condensate.SteamApi.SteamApiClient.GameNewsResponse
+﻿Enter a steam appid below to view the news for that game
 
-@foreach (var gameNewsItem in Model.appnews.newsitems)
+@using (Html.BeginForm("InputAppid", "GameNews", FormMethod.Get))
 {
-    <div>
-        <h3>@gameNewsItem.title</h3>
-        <br />
-        @Html.Raw(gameNewsItem.contents)
-        <hr style="color:#919090; background-color:#919090; height:1px; border:none;" />
-        <br />
-    </div>
+    <input type="number" name="appid" id="appid" />
+
+    <input type="submit" value="InputAppid" />
 }

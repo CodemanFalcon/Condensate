@@ -1,0 +1,31 @@
+﻿@model Condensate.SteamApi.ResponseModels.CommunityProfileGamesResponse
+
+@using (Html.BeginForm("InputCommunityId", "MyGames", FormMethod.Get))
+{
+    <input type="text" name="communityid" id="communityid" />
+
+    <input type="submit" value="Show my games" />
+}
+<div>
+    <h1>Game List for @Model.SteamID</h1>
+    <hr style="color:#919090; background-color:#919090; height:1px; border:none;" />
+    <br />
+</div>
+<div>
+
+    @foreach (var game in Model.Games.GameList)
+    {
+        <div>
+            <img src="@game.Logo">
+            <h3>@game.Name</h3>
+            <ul>
+                <li>@game.HoursOnRecord hours of play on record.</li>
+                <li><a asp-controller="GameNews" asp-action="InputAppid" asp-route-appid="@game.AppID">GameNews</a></li>
+            </ul>
+
+            <hr style="color:#919090; background-color:#919090; height:1px; border:none;" />
+
+            <br />
+        </div>
+    }
+</div>
