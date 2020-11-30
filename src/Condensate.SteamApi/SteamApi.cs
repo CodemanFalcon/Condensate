@@ -1,11 +1,12 @@
 ﻿using Condensate.SteamApi.ResponseModels;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
-using System.Text.Json;
+using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -13,10 +14,11 @@ namespace Condensate.SteamApi
 {
     public class SteamApiClient
     {
+        private readonly HttpClient _client;
 
         public SteamApiClient()
         {
-
+            _client = new HttpClient();
         }
 
         public CommunityProfileGamesResponse GetCommunityProfileGames(string communityid)
@@ -35,17 +37,47 @@ namespace Condensate.SteamApi
             return reply;
         }
 
-        public GameNewsResponse GetGameNews(int appid)
+        public async Task<GameNewsResponse> GetGameNewsAsync(int appid)
+        {
+            var response = await _client
+            .GetAsync($"https://api.steampowered.com/ISteamNews/GetNewsForApp/v2?appid={appid}")
+            .ConfigureAwait(false);
+
+            var gameNews = JsonConvert.DeserializeObject<GameNewsResponse>(await response.Content.ReadAsStringAsync());
+
+            foreach(var game in gameNews.appnews.newsitems)
+            {
+                game.dateTime = UnixTimeStampToDateTime(game.date);
+            }
+
+            return gameNews;
+        }
+
+        public GameNewsResponse GetGameNews(int appid, int count = 0)
         {
             var url = $"https://api.steampowered.com/ISteamNews/GetNewsForApp/v2?appid={appid}";
-            var gameNewItems = new List<GameNewsItem>();
-            using (HttpClient client = new HttpClient())
+            if (count != 0)
             {
-                var response = client.GetAsync(url).Result;
-                var json = response.Content.ReadAsStringAsync().Result;
-                var gameNewsResponse = JsonSerializer.Deserialize<GameNewsResponse>(json);
-                return gameNewsResponse;
+                url = $"https://api.steampowered.com/ISteamNews/GetNewsForApp/v2?appid={appid}&count={count}";
             }
+            
+            var gameNewItems = new List<GameNewsItem>();
+            var response = _client.GetAsync(url).Result;
+            var json = response.Content.ReadAsStringAsync().Result;
+            var gameNewsResponse = JsonConvert.DeserializeObject<GameNewsResponse>(json);
+            foreach (var game in gameNewItems)
+            {
+                game.dateTime = UnixTimeStampToDateTime(game.date);
+            }
+            return gameNewsResponse;
+        }
+
+        public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
+        {
+            // Unix timestamp is seconds past epoch
+            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
+            return dtDateTime;
         }
     }
 }

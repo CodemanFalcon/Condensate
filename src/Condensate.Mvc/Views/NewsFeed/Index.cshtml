@@ -1,0 +1,8 @@
+﻿@using (Html.BeginForm("InputCommunityIdForNewsFeed", "NewsFeed", FormMethod.Get))
+{
+    <p>SteamId:</p><input type="text" name="communityid" id="communityid" />
+
+    <p>Number of NewsItemsPerGame:</p><input type="number" name="count" id="count" />
+
+    <input type="submit" value="Show my news feed" />
+}

@@ -69,3 +69,38 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* InputCommunityIdForNewsFeed styles
+*************************************************************/
+
+.gameNewsItem {
+    background-color: #15202b;
+    border-radius: 25px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.gameProfileLogo {
+    border-radius: 5px;
+    width: 300px;
+}
+
+.gameNewsHeader {
+    color: #edeeee;
+}
+
+.gameProfileName {
+    color: #8899a6;
+}
+
+.gameNewsDatetime {
+    color: #8899a6;
+}
+
+.gameNewsContents {
+    color: #edeeee;
+}
+
+.gameNewsContentImage {
+    width: 300px;
+}

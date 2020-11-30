@@ -1,0 +1,23 @@
+﻿@model List<Condensate.SteamApi.ResponseModels.GameNewsItem>
+
+
+@foreach (var gameNewsItem in Model.Take(100))
+{
+<div class="gameNewsItem">
+    @if (gameNewsItem.gameProfile != null)
+    {
+        if (gameNewsItem.gameProfile.Logo != null)
+        {
+            <img class="gameProfileLogo" src="@gameNewsItem.gameProfile.Logo">
+        }
+    }
+    <h6 class="gameProfileName">@gameNewsItem.gameProfile.Name</h6>
+    <h1 class="gameNewsHeader">@gameNewsItem.title</h1>
+    <div class="gameNewsDatetime">
+        @gameNewsItem.dateTime
+    </div>
+    <div class="gameNewsContents">
+        @Html.Raw(gameNewsItem.contents)
+    </div>
+</div>
+}
