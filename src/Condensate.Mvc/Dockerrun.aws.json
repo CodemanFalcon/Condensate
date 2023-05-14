@@ -1,0 +1,12 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "salyic21/condensate:latest"
+  },
+
+  "Ports": [
+    {
+      "ContainerPort": 443
+    }
+  ]
+}
