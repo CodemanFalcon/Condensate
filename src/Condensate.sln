@@ -1,33 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30621.155
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{B9366B67-28AC-41B7-AB8B-C7F30089F72A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{0EFA08FB-5E83-43BE-87DE-A9187B26BE15}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.Data", "Infra.Data", "{7CE2C1D2-5D98-4AE3-9532-EC9CD4637994}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.IoC", "Infra.IoC", "{244E46A6-198D-4599-999C-A9D35D81EA4C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{6B22CA7C-CBDD-432F-AA32-82EEFB29BCA4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Condensate.Mvc", "Condensate.Mvc\Condensate.Mvc.csproj", "{B9BAA6DF-7AD4-4F25-BA15-618550882792}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Condensate.Domain", "Condensate.Domain\Condensate.Domain.csproj", "{F7470EFD-9C75-401C-9B65-2B736C8D9D42}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Condensate.Infra.Data", "Condensate.Infra.Data\Condensate.Infra.Data.csproj", "{5BF036F4-2377-4D3C-B8DF-9AB3C10A94A6}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Condensate.Application", "Condensate.Application\Condensate.Application.csproj", "{B4684E77-6B14-47C0-AE8E-322265A9671A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SteamApi", "SteamApi", "{F53A3052-B34A-47F0-A077-9923994F0B1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condensate.SteamApi", "Condensate.SteamApi\Condensate.SteamApi.csproj", "{1C3BCC52-85C1-423E-A2D1-62B76C63063B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Condensate.SteamApi", "Condensate.SteamApi\Condensate.SteamApi.csproj", "{1C3BCC52-85C1-423E-A2D1-62B76C63063B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CD53C3DB-4E69-4DD3-9555-3117197505EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condensate.SteamApi.UnitTests", "Condensate.SteamApi.UnitTests\Condensate.SteamApi.UnitTests.csproj", "{9EE5B3B6-0817-4718-A7E9-CCCCEB6014E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Condensate.SteamApi.UnitTests", "Condensate.SteamApi.UnitTests\Condensate.SteamApi.UnitTests.csproj", "{9EE5B3B6-0817-4718-A7E9-CCCCEB6014E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,18 +25,6 @@ Global
 		{B9BAA6DF-7AD4-4F25-BA15-618550882792}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9BAA6DF-7AD4-4F25-BA15-618550882792}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9BAA6DF-7AD4-4F25-BA15-618550882792}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F7470EFD-9C75-401C-9B65-2B736C8D9D42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F7470EFD-9C75-401C-9B65-2B736C8D9D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F7470EFD-9C75-401C-9B65-2B736C8D9D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F7470EFD-9C75-401C-9B65-2B736C8D9D42}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BF036F4-2377-4D3C-B8DF-9AB3C10A94A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BF036F4-2377-4D3C-B8DF-9AB3C10A94A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BF036F4-2377-4D3C-B8DF-9AB3C10A94A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BF036F4-2377-4D3C-B8DF-9AB3C10A94A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4684E77-6B14-47C0-AE8E-322265A9671A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4684E77-6B14-47C0-AE8E-322265A9671A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4684E77-6B14-47C0-AE8E-322265A9671A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4684E77-6B14-47C0-AE8E-322265A9671A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1C3BCC52-85C1-423E-A2D1-62B76C63063B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1C3BCC52-85C1-423E-A2D1-62B76C63063B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C3BCC52-85C1-423E-A2D1-62B76C63063B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,9 +39,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B9BAA6DF-7AD4-4F25-BA15-618550882792} = {6B22CA7C-CBDD-432F-AA32-82EEFB29BCA4}
-		{F7470EFD-9C75-401C-9B65-2B736C8D9D42} = {0EFA08FB-5E83-43BE-87DE-A9187B26BE15}
-		{5BF036F4-2377-4D3C-B8DF-9AB3C10A94A6} = {7CE2C1D2-5D98-4AE3-9532-EC9CD4637994}
-		{B4684E77-6B14-47C0-AE8E-322265A9671A} = {B9366B67-28AC-41B7-AB8B-C7F30089F72A}
 		{1C3BCC52-85C1-423E-A2D1-62B76C63063B} = {F53A3052-B34A-47F0-A077-9923994F0B1F}
 		{9EE5B3B6-0817-4718-A7E9-CCCCEB6014E4} = {CD53C3DB-4E69-4DD3-9555-3117197505EF}
 	EndGlobalSection
